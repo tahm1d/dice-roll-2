@@ -7,11 +7,12 @@ function randomNumber()
 }
 
 let rot=0;
+let sound = new Audio("ds.mp3");
 
 function flip()
 {
     rot+=360*4;
-    image.style.transform = "rotateY("+rot+"deg)";
+    image.style.transform = "rotateX("+rot+"deg)";
     image.style.transition = "transform .3s";
     return 0;
 }
@@ -19,6 +20,7 @@ function flip()
 function show()
 {
     flip();
+    sound.play();
 
     let value = randomNumber();
     //image.src = "image/dice"+value+".png";
